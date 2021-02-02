@@ -36,10 +36,21 @@ Examples:
 ## Files and Folders
 
 ```bash
-otio_plugin_template/
-├── adapters    # Adapter scripts go here
-└── operations  # All medialinker and operational script files go here
-└── hooks       # Hook scripts go here
+├── LICENSE
+├── otio_plugin_template
+│   ├── adapters
+│   │   └── my_adapter.py
+│   ├── hooks
+│   │   └── my_hook.py
+│   ├── operations
+│   │   └── my_media_linker.py
+│   └── schemadefs
+│       └── my_schemadef.py
+├── plugin_manifest.json
+├── README.md
+├── setup.py
+└── tests
+    └── test_my_plugin.py
 ```
 
 ## Tests
@@ -53,3 +64,8 @@ of python and OpenTimelineIO versions.
 An example setup.py is provided which should guide you on the way to publishing
 you plugin on PyPi.
 There's also a sample github-action provided to automate the process.
+
+
+## Github Actions
+
+A set of simple automation scripts are available in the `.github/workflows` folder.

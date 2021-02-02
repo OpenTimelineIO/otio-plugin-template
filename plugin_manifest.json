@@ -1,0 +1,42 @@
+{
+    "OTIO_SCHEMA" : "PluginManifest.1",
+    "adapters" : [
+        {
+            "OTIO_SCHEMA" : "Adapter.1",
+            "name" : "my_adapter",
+            "execution_scope" : "in process",
+            "filepath" : "adapters/my_adapter.py",
+            "suffixes" : ["xyz"]
+        }
+    ],
+    "media_linkers" : [
+        {
+            "OTIO_SCHEMA" : "MediaLinker.1",
+            "name" : "my_medialinker",
+            "execution_scope" : "in process",
+            "filepath" : "operations/my_media_linker.py"
+        }
+    ],
+    "schemadefs" : [
+        {
+            "OTIO_SCHEMA" : "SchemaDef.1",
+            "name" : "my_schema",
+            "execution_scope" : "in process",
+            "filepath" : "my_schema.py"
+         }
+    ],
+    "hook_scripts" : [
+        {
+            "OTIO_SCHEMA" : "HookScript.1",
+            "name" : "example_hook",
+            "execution_scope" : "in process",
+            "filepath" : "my_hook.py"
+        }
+    ],
+    "hooks" : {
+        "pre_adapter_write" : ["example_hook"],
+        "post_adapter_read" : [],
+        "post_adapter_write" : [],
+        "post_media_linker" : []
+    }
+}
