@@ -12,7 +12,7 @@
     "media_linkers" : [
         {
             "OTIO_SCHEMA" : "MediaLinker.1",
-            "name" : "my_medialinker",
+            "name" : "my_media_linker",
             "execution_scope" : "in process",
             "filepath" : "operations/my_media_linker.py"
         }
@@ -20,9 +20,9 @@
     "schemadefs" : [
         {
             "OTIO_SCHEMA" : "SchemaDef.1",
-            "name" : "my_schema",
+            "name" : "my_schemadef",
             "execution_scope" : "in process",
-            "filepath" : "my_schema.py"
+            "filepath" : "schemadefs/my_schemadef.py"
          }
     ],
     "hook_scripts" : [
@@ -30,7 +30,7 @@
             "OTIO_SCHEMA" : "HookScript.1",
             "name" : "example_hook",
             "execution_scope" : "in process",
-            "filepath" : "my_hook.py"
+            "filepath" : "hooks/my_hook.py"
         }
     ],
     "hooks" : {
