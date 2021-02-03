@@ -1,5 +1,6 @@
 import opentimelineio as otio
 
+
 @otio.core.register_type
 class MyThing(otio.core.SerializableObject):
     """A schema for my thing."""
@@ -8,9 +9,9 @@ class MyThing(otio.core.SerializableObject):
     _name = "MyThing"
 
     def __init__(
-        self,
-        arg1=None,
-        argN=None
+            self,
+            arg1=None,
+            argN=None
     ):
         otio.core.SerializableObject.__init__(self)
         self.arg1 = arg1
@@ -18,12 +19,12 @@ class MyThing(otio.core.SerializableObject):
 
     arg1 = otio.core.serializable_field(
         "arg1",
-        doc = ( "arg1's doc string")
+        doc="arg1's doc string"
     )
 
     argN = otio.core.serializable_field(
         "argN",
-        doc = ( "argN's doc string")
+        doc="argN's doc string"
     )
 
     def __str__(self):
