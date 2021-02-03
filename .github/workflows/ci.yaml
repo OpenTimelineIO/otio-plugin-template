@@ -50,7 +50,3 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-
-      - name: Check registration of plugin
-        run: |
-          [[ ! -z $(otiopluginfo ${{ env.plugin_name }} | grep ${{ env.plugin_name }}) ]]
