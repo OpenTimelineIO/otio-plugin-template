@@ -27,30 +27,30 @@ jobs:
         python-version: [2.7, 3.7, 3.8]
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ matrix.python-version }}
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest pytest-cov -V OpenTimelineIO==0.13.0
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest pytest-cov -V OpenTimelineIO==0.13.0
 
-    - name: Install Plugin
-      run: |
-        pip install -e .
+      - name: Install Plugin
+        run: |
+          pip install -e .
 
-    - name: Lint with flake8
-      run: |
-        flake8 --show-source --statistics
+      - name: Lint with flake8
+        run: |
+          flake8 --show-source --statistics
 
-    - name: Test with pytest
-      run: |
-        pytest
+      - name: Test with pytest
+        run: |
+          pytest
 
-    - name: Check registration of plugin
-      run: |
-        [[ ! -z $(otiopluginfo mlt_xml | grep ${{ env.plugin_name }}) ]]
+      - name: Check registration of plugin
+        run: |
+          [[ ! -z $(otiopluginfo mlt_xml | grep ${{ env.plugin_name }}) ]]
