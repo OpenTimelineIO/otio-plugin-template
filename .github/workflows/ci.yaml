@@ -19,13 +19,12 @@ jobs:
   test-otio-0130:
     env:
       plugin_name: "otio_temmplate_plugin"
-      PATH: $PYTHONPATH;$PATH
 
     name: "OpenTimelineIO 0.13.0"
     strategy:
       matrix:
         python-version: [2.7, 3.7, 3.8]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest] # windows-latest when wheel is in place
 
     runs-on: ${{ matrix.os }}
 
