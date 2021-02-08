@@ -92,7 +92,7 @@ Manual steps for creating a simple package and upload to (test)PyPi:
 python setup.py sdist bdist_wheel --universal
 twine upload --repository testpypi dist/*
 ```
-Please advise pythons [docs](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects) 
+Please check out pythons [docs](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects) 
 for more detailed descriptions on packaging. 
 
 

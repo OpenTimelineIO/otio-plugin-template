@@ -51,4 +51,7 @@ jobs:
 
       - name: Test with pytest
         run: |
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            PATH=$PYTHONPATH;$PATH
+          fi
           pytest
