@@ -55,3 +55,5 @@ jobs:
             PATH=$PYTHONPATH;$PATH
           fi
           pytest
+
+        shell: bash
