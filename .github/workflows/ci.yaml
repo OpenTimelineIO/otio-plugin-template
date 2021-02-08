@@ -19,6 +19,7 @@ jobs:
   test-otio-0130:
     env:
       plugin_name: "otio_temmplate_plugin"
+      PATH: $PYTHONPATH;$PATH
 
     name: "OpenTimelineIO 0.13.0"
     strategy:
@@ -51,7 +52,6 @@ jobs:
 
       - name: Test with pytest
         run: |
-          PATH=$PYTHONPATH;$PATH
           pytest
 
         shell: bash
