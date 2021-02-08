@@ -21,10 +21,12 @@ jobs:
       plugin_name: "otio_temmplate_plugin"
 
     name: "OpenTimelineIO 0.13.0"
-    runs-on: ubuntu-latest
     strategy:
       matrix:
         python-version: [2.7, 3.7, 3.8]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v2

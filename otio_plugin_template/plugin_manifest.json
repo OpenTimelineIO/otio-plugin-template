@@ -28,13 +28,13 @@
     "hook_scripts" : [
         {
             "OTIO_SCHEMA" : "HookScript.1",
-            "name" : "example_hook",
+            "name" : "my_hook",
             "execution_scope" : "in process",
             "filepath" : "hooks/my_hook.py"
         }
     ],
     "hooks" : {
-        "pre_adapter_write" : ["example_hook"],
+        "pre_adapter_write" : ["my_hook"],
         "post_adapter_read" : [],
         "post_adapter_write" : [],
         "post_media_linker" : []

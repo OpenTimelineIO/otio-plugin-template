@@ -34,7 +34,7 @@ def test_hook():
     timeline.tracks.append(track)
 
     assert clip.metadata.get(
-        'example_hook_function_was_here',
+        'my_hook_function_was_here',
         None
     ) is None
 
@@ -45,7 +45,7 @@ def test_hook():
 
     clip_changed = o.tracks[0][0]
     assert clip_changed.metadata.get(
-        'example_hook_function_was_here',
+        'my_hook_function_was_here',
         None
     ) is True
 
@@ -63,9 +63,9 @@ def test_media_linker():
 
     assert isinstance(
         clip.media_reference,
-        otio.schema.MissingReference
+        otio.schema.ExternalReference
     )
-    assert clip.media_reference.name == 'my_clip_tweaked'
+    assert clip.media_reference.target_url == '/some/path/to/my_clip.ext'
 
 
 def test_schemadef():

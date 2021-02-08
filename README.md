@@ -1,19 +1,19 @@
 # OpenTimelineIO Plugin Template
 
 This repository serves as a template for writing new adapters, media linkers, 
-hooks or schemadefs that plug into OpenTimelineIO.
+hooks or schemadefs that expand OpenTimelineIO through its plugin system.
 It contains some boiler plate files and folders to help you write plugins that 
-should install correctly. 
+should install correctly through pip should you choose to do so.
 
-Once cloned, you're encouraged to add, rename or remove files and folders as you 
-see fit, but please try and keep to the suggested naming convention below. 
-That way it's easy to spot an OTIO plugin and understand what it does.
+Once cloned, you're free to add, rename or remove files and folders as you 
+see fit, but we encourage you to follow the suggested naming convention below. 
+That way it's easy for others to spot an OTIO plugin and understand what it does.
 
 
 ## Suggested naming convention
 
 We recommend naming your cloned repository and package name after the 
-following conventions:
+following convention:
 
 * Repository and uploaded package name (using hyphens):
 `otio-<dialect>[-<plugintype>]`
@@ -29,7 +29,7 @@ Examples:
 * `otio-playlist-adapter` (read or write playlist files)
 * `otio-git-hook` (a hook that commits otio file to git after writing)
 * `otio-ffmpeg-medialinker` (link media references using FFmpeg)
-* `otio-videofx-shemadef` (adds a video effects schema)
+* `otio-videofx-shemadef` (adds some video effects schema)
 * `otio-mxf` (complex plugin to read, write and link MXF files)
 
 
@@ -38,22 +38,42 @@ Examples:
 ```bash
 ├── LICENSE
 ├── otio_plugin_template
+│   ├── __init__.py
 │   ├── adapters
-│   │   └── my_adapter.py
+│   │   ├── __init__.py
+│   │   ├── my_adapter.py
 │   ├── hooks
-│   │   └── my_hook.py
+│   │   ├── __init__.py
+│   │   ├── my_hook.py
 │   ├── operations
-│   │   └── my_media_linker.py
+│   │   ├── __init__.py
+│   │   ├── my_media_linker.py
+│   ├── plugin_manifest.json
 │   └── schemadefs
-│       └── my_schemadef.py
-├── plugin_manifest.json
+│       ├── __init__.py
+│       ├── my_schemadef.py
 ├── README.md
+├── setup.cfg
 ├── setup.py
-└── tests
+├── tests
     └── test_my_plugin.py
 ```
+You're free to rename or restructure files and folders above, but make sure the 
+`plugin_manifest.json` filename is kept and that the contents inside it reflect
+your choices to make sure OpenTimelineIO's plugin system loads your plugin properly.
 
-## Tests
+
+## Testing your plugin during development
+```bash
+# In the root folder of the repo
+pip install -e .
+
+# Test an adapter for instance
+otioconvert -i some_timeline.otio -o some_timeline.ext
+```
+
+
+## Unit tests
 
 It's always a good idea to write unit tests for you code.
 Please provide tests that run against supported versions of python and 
@@ -62,9 +82,24 @@ OpenTimelineIO.
 
 ## Upload to PyPi
 
-An example setup.py is provided which should guide you on the way towards
-publishing your plugin on PyPi.
+Should you want to release your package to the world and let others reap the 
+fruits of your labor, an example setup.py is provided which should guide you 
+on the way towards publishing your plugin on PyPi.
 There's also a sample github-action provided to help automate the process.
+
+Manual steps for creating a simple package and upload to (test)PyPi:
+```bash
+python setup.py sdist bdist_wheel --universal
+twine upload --repository testpypi dist/*
+```
+Please advise pythons [docs](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects) 
+for more detailed descriptions on packaging. 
+
+
+## Let us know about your plugin
+If you release your plugin to the public please let us know about it, so we can 
+add it to our [list](https://github.com/PixarAnimationStudios/OpenTimelineIO/wiki/Tools-and-Projects-Using-OpenTimelineIO) 
+of known plugins.
 
 
 ## Github Actions
