@@ -39,6 +39,7 @@ Examples:
 ├── LICENSE
 ├── otio_plugin_template
 │   ├── __init__.py
+│   ├── plugin_manifest.json
 │   ├── adapters
 │   │   ├── __init__.py
 │   │   ├── my_adapter.py
@@ -48,7 +49,6 @@ Examples:
 │   ├── operations
 │   │   ├── __init__.py
 │   │   ├── my_media_linker.py
-│   ├── plugin_manifest.json
 │   └── schemadefs
 │       ├── __init__.py
 │       ├── my_schemadef.py
