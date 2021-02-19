@@ -33,6 +33,12 @@ Examples:
 * `otio-mxf` (complex plugin to read, write and link MXF files)
 
 
+## Note regarding license
+
+We encourage you to choose a permissive license so everyone can use and/or 
+contribute to it.
+
+
 ## Suggested folder structure
 
 ```bash
@@ -106,5 +112,5 @@ of known plugins.
 
 A set of simple automation scripts are available in the `.github/workflows` folder.
 * `ci.yaml` - runs unit tests
-* `build_package.yaml` - simple packing an publishing of a plugin package
+* `deploy_package.yaml` - simple packing an publishing of a plugin package
 * `create_draft_release` - when a tag is pushed, it creates a draft for a release
