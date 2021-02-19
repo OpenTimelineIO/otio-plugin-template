@@ -10,6 +10,12 @@ see fit, but we encourage you to follow the suggested naming convention below.
 That way it's easy for others to spot an OTIO plugin and understand what it does.
 
 
+# Licensing
+
+We encourage you to choose a permissive license so everyone can use and/or 
+contribute to it.
+
+
 ## Suggested naming convention
 
 We recommend naming your cloned repository and package name after the 
@@ -31,12 +37,6 @@ Examples:
 * `otio-ffmpeg-medialinker` (link media references using FFmpeg)
 * `otio-videofx-shemadef` (adds some video effects schema)
 * `otio-mxf` (complex plugin to read, write and link MXF files)
-
-
-## Note regarding license
-
-We encourage you to choose a permissive license so everyone can use and/or 
-contribute to it.
 
 
 ## Suggested folder structure
