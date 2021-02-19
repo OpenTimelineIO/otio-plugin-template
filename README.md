@@ -9,12 +9,13 @@ Once cloned, you're free to add, rename or remove files and folders as you
 see fit, but we encourage you to follow the suggested naming convention below. 
 That way it's easy for others to spot an OTIO plugin and understand what it does.
 
-
 # Licensing
 
-We encourage you to choose a permissive license so everyone can use and/or 
-contribute to it.
-
+This template repository is licensed under a choice of the 
+[Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
+or the [MIT License](https://opensource.org/licenses/MIT). If you are cloning 
+this repository, you are welcome to have you code under either of these licenses 
+or a license that is compatible.
 
 ## Suggested naming convention
 
