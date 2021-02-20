@@ -7,7 +7,7 @@ should install correctly through pip should you choose to do so.
 
 Once cloned, you're free to add, rename or remove files and folders as you 
 see fit, but we encourage you to follow the suggested 
-[naming convention](#Suggested naming convention) below. 
+[naming convention](#Suggested-naming-convention) below. 
 That way it's easy for others to spot an OTIO plugin and understand what it does.
 
 
