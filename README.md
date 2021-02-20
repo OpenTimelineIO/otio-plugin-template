@@ -116,8 +116,8 @@ of known plugins.
 
 A set of simple automation scripts are available in the `.github/workflows` folder.
 * `ci.yaml` - runs unit tests
-* `deploy_package.yaml` - simple packing an publishing of a plugin package
 * `create_draft_release` - when a tag is pushed, it creates a draft for a release
+* `deploy_package.yaml` - simple packing an publishing of a plugin package
 
 
 ## Contributions
