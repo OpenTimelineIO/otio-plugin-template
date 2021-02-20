@@ -123,7 +123,7 @@ A set of simple automation scripts are available in the `.github/workflows` fold
 ## Contributions
 
 If you have any suggestions or changes to suggest to this template repository, 
-please provide them via [pull request](otio-plugin-template/pulls) or [create an issue](otio-plugin-template/issues) as appropriate. 
+please provide them via [pull request](../../pulls) or [create an issue](../../issues) as appropriate. 
 
 All contributions must align with the contribution
 [guidelines](https://opentimelineio.readthedocs.io/en/latest/tutorials/contributing.html) 
