@@ -9,6 +9,7 @@ Once cloned, you're free to add, rename or remove files and folders as you
 see fit, but we encourage you to follow the suggested naming convention below. 
 That way it's easy for others to spot an OTIO plugin and understand what it does.
 
+
 # Licensing
 
 This template repository is licensed under a choice of the 
@@ -16,6 +17,7 @@ This template repository is licensed under a choice of the
 or the [MIT License](https://opensource.org/licenses/MIT). If you are cloning 
 this repository, you are welcome to have you code under either of these licenses 
 or a license that is compatible.
+
 
 ## Suggested naming convention
 
@@ -109,16 +111,19 @@ add it to our [list](https://github.com/PixarAnimationStudios/OpenTimelineIO/wik
 of known plugins.
 
 
-## Contributions
-
-If you have any suggestions or changes to suggest to this template repository, please provide them via [pull request](pulls) or [create an issue](issues) as appropriate. 
-
-All contributions must align with the contribution guidelines of the OpenTimelineIO project, available at....
-
-
 ## Github Actions
 
 A set of simple automation scripts are available in the `.github/workflows` folder.
 * `ci.yaml` - runs unit tests
 * `deploy_package.yaml` - simple packing an publishing of a plugin package
 * `create_draft_release` - when a tag is pushed, it creates a draft for a release
+
+
+## Contributions
+
+If you have any suggestions or changes to suggest to this template repository, 
+please provide them via [pull request](pulls) or [create an issue](issues) as appropriate. 
+
+All contributions must align with the contribution
+[guidelines](https://opentimelineio.readthedocs.io/en/latest/tutorials/contributing.html) 
+of the OpenTimelineIO project.
