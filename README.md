@@ -109,6 +109,13 @@ add it to our [list](https://github.com/PixarAnimationStudios/OpenTimelineIO/wik
 of known plugins.
 
 
+## Contributions
+
+If you have any suggestions or changes to suggest to this template repository, please provide them via [pull request](pulls) or [create an issue](issues) as appropriate. 
+
+All contributions must align with the contribution guidelines of the OpenTimelineIO project, available at....
+
+
 ## Github Actions
 
 A set of simple automation scripts are available in the `.github/workflows` folder.
