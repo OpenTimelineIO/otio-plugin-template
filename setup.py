@@ -9,20 +9,29 @@ import setuptools
 with io.open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
+
+"""
+Make sure to replace all the dummy names, emails etc. with your details and
+package names.
+"""
+
 setuptools.setup(
-    name="otio-plugin-template",
+    name="your-plugin-name",
     author="YOUR NAME",
     author_email="your.email@domain.com",
     version="0.0.1",
-    description="OpenTimelineIO Plugin Template",
+    description="Short description of your plugin",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/apetrynet/otio-plugin-template",
+    # Replace url with your repo
+    url="https://github.com/USERNAME/your-repo-name",
     packages=setuptools.find_packages(),
     entry_points={
+        # Replace otio_plugin_template with your package name
         "opentimelineio.plugins": "otio_plugin_template = otio_plugin_template"
     },
     package_data={
+        # Replace otio_plugin_template with your package name
         "otio_plugin_template": [
             "plugin_manifest.json",
         ],
