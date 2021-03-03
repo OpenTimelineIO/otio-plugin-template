@@ -11,7 +11,7 @@ see fit, but we encourage you to follow the suggested
 That way it's easy for others to spot an OTIO plugin and understand what it does.
 
 
-# Licensing
+## Licensing
 
 This template repository is licensed under a choice of the 
 [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
@@ -70,7 +70,7 @@ Examples:
 ```
 You're free to rename or restructure files and folders above, but make sure the 
 `plugin_manifest.json` filename is kept and that the contents inside it reflect
-your choices to make sure OpenTimelineIO's plugin system loads your plugin properly.
+your choices so OpenTimelineIO's plugin system loads your plugin properly.
 
 
 ## Testing your plugin during development
@@ -88,6 +88,14 @@ otioconvert -i some_timeline.otio -o some_timeline.ext
 It's always a good idea to write unit tests for you code.
 Please provide tests that run against supported versions of python and 
 OpenTimelineIO.
+
+
+## Github Actions
+
+A set of simple automation scripts are available in the `.github/workflows` folder.
+* `ci.yaml` - runs unit tests
+* `create_draft_release` - when a tag is pushed, it creates a draft for a release
+* `deploy_package.yaml` - simple packing an publishing of a plugin package
 
 
 ## Upload to PyPi
@@ -112,19 +120,11 @@ add it to our [list](https://github.com/PixarAnimationStudios/OpenTimelineIO/wik
 of known plugins.
 
 
-## Github Actions
-
-A set of simple automation scripts are available in the `.github/workflows` folder.
-* `ci.yaml` - runs unit tests
-* `create_draft_release` - when a tag is pushed, it creates a draft for a release
-* `deploy_package.yaml` - simple packing an publishing of a plugin package
-
-
 ## Contributions
 
-If you have any suggestions or changes to suggest to this template repository, 
+If you have any suggested changes to the template repository itself, 
 please provide them via [pull request](../../pulls) or [create an issue](../../issues) as appropriate. 
 
-All contributions must align with the contribution
+All contributions back to the template repository must align with the contribution
 [guidelines](https://opentimelineio.readthedocs.io/en/latest/tutorials/contributing.html) 
 of the OpenTimelineIO project.
