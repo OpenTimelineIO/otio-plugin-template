@@ -1,5 +1,5 @@
 """
-Simple linker just adding a MissingReference and giving it a tweaked name
+Simple linker pretending to add an ExternalReference
 """
 
 import opentimelineio as otio
