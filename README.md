@@ -95,7 +95,9 @@ OpenTimelineIO.
 A set of simple automation scripts are available in the `.github/workflows` folder.
 * `ci.yaml` - runs unit tests
 * `create_draft_release` - when a tag is pushed, it creates a draft for a release
-* `deploy_package.yaml` - simple packing an publishing of a plugin package
+* `deploy_package.yaml` - simple packing an publishing of a plugin package. 
+  Make sure you have a valid token for your PyPi user added to your repos 
+  [secrets](https://docs.github.com/es/actions/reference/encrypted-secrets).
 
 
 ## Upload to PyPi

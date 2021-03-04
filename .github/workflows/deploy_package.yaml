@@ -22,8 +22,10 @@ jobs:
       env:
         TWINE_USERNAME: __token__
         # You need to add a token to your repo's secrets
+        # Make sure you match the name of your secret to the token name below.
         TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
       run: |
         python setup.py sdist bdist_wheel --universal
-        # Replace testpypi with pypi when you're confident everything works
-        twine upload --repository testpypi dist/*
+
+        # Make sure everything works on testpypi before releasing on pypi
+        twine upload --repository pypi dist/*
