@@ -58,14 +58,21 @@ def test_media_linker():
             otio.opentime.RationalTime(100, 30)
         )
     )
-    linker = otio.media_linker.from_name('my_media_linker')
-    linker.link_media_reference(clip, {})
-
-    assert isinstance(
-        clip.media_reference,
-        otio.schema.ExternalReference
+    clip.media_reference = otio.schema.ExternalReference(
+        target_url='/client/source/to/my_clip.ext',
+        available_range=otio.opentime.TimeRange(
+            otio.opentime.RationalTime(0, 30),
+            otio.opentime.RationalTime(100, 30)
+        )
     )
-    assert clip.media_reference.target_url == '/some/path/to/my_clip.ext'
+    linker_args = {
+        "old_root": "/client/source/",
+        "new_root": "/local/storage/"
+    }
+    linker = otio.media_linker.from_name('my_media_linker')
+    linker.link_media_reference(clip, linker_args)
+
+    assert clip.media_reference.target_url == '/local/storage/to/my_clip.ext'
 
 
 def test_schemadef():

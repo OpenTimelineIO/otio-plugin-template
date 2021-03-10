@@ -1,20 +1,30 @@
 """
-Simple linker pretending to add an ExternalReference
+Simple linker script replacing the root of the storage path
 """
 
+import re
 import opentimelineio as otio
 
 
 def link_media_reference(in_clip, media_linker_argument_map):
-    meta = dict()
-    meta.update(media_linker_argument_map)
+    old_root = media_linker_argument_map.get('old_root', '')
+    new_root = media_linker_argument_map.get('new_root', '')
 
-    # You'll probably want to set it to something other than this
-    in_clip.media_reference = otio.schema.ExternalReference(
-        target_url='/some/path/to/my_clip.ext',
-        metadata=meta,
-        available_range=otio.opentime.TimeRange(
-            otio.opentime.RationalTime(0, 30),
-            otio.opentime.RationalTime(100, 30)
+    # Store media reference as a variable for convenience
+    mr = in_clip.media_reference
+
+    # Check for media reference
+    if not mr:
+        # Since there's no media reference we move on
+        return
+
+    if isinstance(mr, otio.schema.ExternalReference):
+        mr.target_url = re.sub(old_root, new_root, mr.target_url, count=1)
+
+    elif isinstance(mr, otio.schema.ImageSequenceReference):
+        mr.target_url_base = re.sub(
+            old_root,
+            new_root,
+            mr.target_url_base,
+            count=1
         )
-    )
