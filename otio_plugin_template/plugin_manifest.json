@@ -6,7 +6,7 @@
             "name" : "my_adapter",
             "execution_scope" : "in process",
             "filepath" : "adapters/my_adapter.py",
-            "suffixes" : ["xyz"]
+            "suffixes" : ["ext"]
         }
     ],
     "media_linkers" : [
