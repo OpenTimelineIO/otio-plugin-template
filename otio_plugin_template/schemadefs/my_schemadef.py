@@ -1,3 +1,7 @@
+"""
+Simple schema for my thing
+"""
+
 import opentimelineio as otio
 
 
