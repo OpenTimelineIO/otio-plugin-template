@@ -18,7 +18,7 @@ on:
 jobs:
   test-otio-0130:
     env:
-      plugin_name: "otio_temmplate_plugin"
+      plugin_name: "otio_template_plugin"
 
     name: "OpenTimelineIO 0.13.0"
     strategy:
