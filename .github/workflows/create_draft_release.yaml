@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     env:
-      plugin_name: "otio_temmplate_plugin"
+      plugin_name: "otio_template_plugin"
 
     name: Create Release
     runs-on: ubuntu-latest
