@@ -1,7 +1,3 @@
-import json
-import opentimelineio as otio
-
-
 """
 Super simple adapter example that takes a json formatted string and creates
 a Timeline.
@@ -22,6 +18,9 @@ raw_data = '''{
     }
 }'''
 """
+
+import json
+import opentimelineio as otio
 
 
 def read_from_string(input_str):
