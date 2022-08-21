@@ -5,12 +5,6 @@ hooks or schemadefs that expand OpenTimelineIO through its plugin system.
 It contains some boiler plate files and folders to help you write plugins that 
 should install correctly through pip should you choose to do so.
 
-Once cloned, you're free to add, rename or remove files and folders as you 
-see fit, but we encourage you to follow the suggested 
-[naming convention](#Suggested-naming-convention) below. 
-That way it's easy for others to spot an OTIO plugin and understand what it does.
-
-
 ## Licensing
 
 This template repository is licensed under a choice of the 
@@ -18,6 +12,31 @@ This template repository is licensed under a choice of the
 or the [MIT License](https://opensource.org/licenses/MIT). If you are cloning 
 this repository, you are welcome to have your code under either of these licenses, 
 or a license that is compatible.
+
+
+# Getting started
+
+To get started, just push the green **"Use this template"** button at the top right 
+of the repository listing. You get directed to a page where you establish a name for 
+your new repository. Please consider following the 
+[naming convention](#Suggested-naming-convention) below.  
+Sticking to a naming convention makes it easy for others to spot an 
+OTIO plugin and understand what it does when browsing PyPi or GitHub
+should you choose to share your plugin.
+
+Once your new plugin repository is created you should be all set to begin 
+writing your plugin.  
+Please take a look at the notes in the 
+[suggested folder structure](#Suggested-folder-structure) section for a few tips.
+
+Please also consult with the OpenTimelineIO [documentation](https://opentimelineio.readthedocs.io/en/latest/index.html)
+for more information about OpenTimelineIO in general and  
+[here](https://opentimelineio.readthedocs.io/en/latest/tutorials/write-an-adapter.html) for documentation about **adapters**  
+[here](https://opentimelineio.readthedocs.io/en/latest/tutorials/write-a-media-linker.html) for documentation about **media linkers**  
+[here](https://opentimelineio.readthedocs.io/en/latest/tutorials/write-a-hookscript.html) for documentation about **hooks**  
+[here](https://opentimelineio.readthedocs.io/en/latest/tutorials/write-a-schemadef.html) for documentation about **shemadefs**  
+
+Good luck and happy coding!
 
 
 ## Suggested naming convention
@@ -44,8 +63,14 @@ Examples:
 
 
 ## Suggested folder structure
+Below is the default file and folder tree that comes with the plugin template.
+  
+You're free to rename, remove or restructure the files and folders below, 
+but make sure the `plugin_manifest.json` file is kept and that the contents 
+inside it reflect your choices so OpenTimelineIO's plugin system loads your 
+plugin properly.
 
-```bash
+```commandline
 ├── LICENSE
 ├── otio_plugin_template
 │   ├── __init__.py
@@ -68,13 +93,10 @@ Examples:
 ├── tests
     └── test_my_plugin.py
 ```
-You're free to rename or restructure files and folders above, but make sure the 
-`plugin_manifest.json` filename is kept and that the contents inside it reflect
-your choices so OpenTimelineIO's plugin system loads your plugin properly.
 
 
 ## Testing your plugin during development
-```bash
+```commandline
 # In the root folder of the repo
 pip install -e .
 
@@ -108,7 +130,7 @@ on the way towards publishing your plugin on PyPi.
 There's also a sample github-action provided to help automate the process.
 
 Manual steps for creating a simple package and upload to (test)PyPi:
-```bash
+```commandline
 python setup.py sdist bdist_wheel --universal
 twine upload --repository testpypi dist/*
 ```
