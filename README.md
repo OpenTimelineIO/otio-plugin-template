@@ -1,9 +1,10 @@
 # OpenTimelineIO Plugin Template
 
+Welcome to OpenTimelineIO's plugin template repository!  
 This repository serves as a template for writing new adapters, media linkers, 
 hooks or schemadefs that expand OpenTimelineIO through its plugin system.
-It contains some boiler plate files and folders to help you write plugins that 
-should install correctly through pip should you choose to do so.
+It contains boilerplate files and folders to help you write plugins that 
+register properly when installing through pip should you choose to do so.  
 
 ## Licensing
 
@@ -17,8 +18,9 @@ or a license that is compatible.
 # Getting started
 
 To get started, just push the green **"Use this template"** button at the top right 
-of the repository listing. You get directed to a page where you establish a name for 
-your new repository. Please consider following the 
+of the repository listing. A dialog will appear where you enter the name and
+location of your new repository.  
+Please consider following the suggested 
 [naming convention](#Suggested-naming-convention) below.  
 Sticking to a naming convention makes it easy for others to spot an 
 OTIO plugin and understand what it does when browsing PyPi or GitHub
@@ -70,28 +72,31 @@ but make sure the `plugin_manifest.json` file is kept and that the contents
 inside it reflect your choices so OpenTimelineIO's plugin system loads your 
 plugin properly.
 
+Make sure to add a descriptive docstring at the top of your plugin files, so they 
+register properly and inform users of what they do.
+
 ```commandline
-├── LICENSE
-├── otio_plugin_template
-│   ├── __init__.py
-│   ├── plugin_manifest.json
-│   ├── adapters
-│   │   ├── __init__.py
-│   │   ├── my_adapter.py
-│   ├── hooks
-│   │   ├── __init__.py
-│   │   ├── my_hook.py
-│   ├── operations
-│   │   ├── __init__.py
-│   │   ├── my_media_linker.py
-│   └── schemadefs
-│       ├── __init__.py
-│       ├── my_schemadef.py
-├── README.md
-├── setup.cfg
-├── setup.py
-├── tests
-    └── test_my_plugin.py
+ |── LICENSE
+ ├── otio_plugin_template
+ │   ├── __init__.py
+ │   ├── plugin_manifest.json
+ │   ├── adapters
+ │   │   ├── __init__.py
+ │   │   ├── my_adapter.py
+ │   ├── hooks
+ │   │   ├── __init__.py
+ │   │   ├── my_hook.py
+ │   ├── operations
+ │   │   ├── __init__.py
+ │   │   ├── my_media_linker.py
+ │   └── schemadefs
+ │       ├── __init__.py
+ │       ├── my_schemadef.py
+ ├── README.md
+ ├── setup.cfg
+ ├── setup.py
+ ├── tests
+     └── test_my_plugin.py
 ```
 
 
@@ -99,6 +104,9 @@ plugin properly.
 ```commandline
 # In the root folder of the repo
 pip install -e .
+
+# Check if plugin installed correctly
+otiopluginfo myadapter
 
 # Test an adapter for instance
 otioconvert -i some_timeline.otio -o some_timeline.ext
