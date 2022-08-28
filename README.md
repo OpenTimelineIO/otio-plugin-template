@@ -67,15 +67,7 @@ Examples:
 ## Suggested folder structure
 Below is the default file and folder tree that comes with the plugin template.
   
-You're free to rename, remove or restructure the files and folders below, 
-but make sure the `plugin_manifest.json` file is kept and that the contents 
-inside it reflect your choices so OpenTimelineIO's plugin system loads your 
-plugin properly.
-
-Make sure to add a descriptive docstring at the top of your plugin files, so they 
-register properly and inform users of what they do.
-
-```commandline
+```
  |── LICENSE
  ├── otio_plugin_template
  │   ├── __init__.py
@@ -99,9 +91,48 @@ register properly and inform users of what they do.
      └── test_my_plugin.py
 ```
 
+### Reorganizing the folder structure to suite your plugin
+You're free to rename, remove or restructure the files and folders to best suite 
+your plugin. Simple adapters may not need a deep folder structure (see example below).  
+Just make sure the `plugin_manifest.json` file is kept and that the contents 
+inside it reflect your choices. This makes sure OpenTimelineIO's plugin system 
+loads your plugin properly.
+
+> **TIP!** Make sure to add a descriptive docstring at the top of your plugin files, so they 
+register properly and inform users of what they do.
+
+Example of a simple adapter plugin. Notice how we removed the "adapters" folder.
+```
+ |── LICENSE
+ ├── otio_my_adapter
+ │   ├── __init__.py
+ │   ├── plugin_manifest.json
+ │   ├── my_adapter.py
+ ├── README.md
+ ├── setup.cfg
+ ├── setup.py
+ ├── tests
+     └── test_my_adapter.py
+```
+
+And the manifest file:
+``` json
+{
+    "OTIO_SCHEMA" : "PluginManifest.1",
+    "adapters" : [
+        {
+            "OTIO_SCHEMA" : "Adapter.1",
+            "name" : "my_adapter",
+            "execution_scope" : "in process",
+            "filepath" : "my_adapter.py",
+            "suffixes" : ["xyz"]
+        }
+    ]
+}
+```
 
 ## Testing your plugin during development
-```commandline
+```
 # In the root folder of the repo
 pip install -e .
 
@@ -138,7 +169,7 @@ on the way towards publishing your plugin on PyPi.
 There's also a sample github-action provided to help automate the process.
 
 Manual steps for creating a simple package and upload to (test)PyPi:
-```commandline
+```
 python setup.py sdist bdist_wheel --universal
 twine upload --repository testpypi dist/*
 ```
