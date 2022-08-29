@@ -29,7 +29,7 @@ should you choose to share your plugin.
 Once your new plugin repository is created you should be all set to begin 
 writing your plugin.  
 Please take a look at the notes in the 
-[suggested folder structure](#Suggested-folder-structure) section for a few tips.
+[default folder structure](#Default-folder-structure) section for a few tips.
 
 Please also consult with the OpenTimelineIO [documentation](https://opentimelineio.readthedocs.io/en/latest/index.html)
 for more information about OpenTimelineIO in general and  
@@ -64,14 +64,14 @@ Examples:
 * `otio-mxf` (complex plugin to read, write and link MXF files)
 
 
-## Suggested folder structure
+## Default folder structure
 Below is the default file and folder tree that comes with the plugin template.
   
 ```
  |── LICENSE
  ├── otio_plugin_template
  │   ├── __init__.py
- │   ├── plugin_manifest.json
+ │   ├── plugin_manifest.json  # Required
  │   ├── adapters
  │   │   ├── __init__.py
  │   │   ├── my_adapter.py
@@ -106,7 +106,7 @@ Example of a simple adapter plugin. Notice how we removed the "adapters" folder.
  |── LICENSE
  ├── otio_my_adapter
  │   ├── __init__.py
- │   ├── plugin_manifest.json
+ │   ├── plugin_manifest.json  # Required
  │   ├── my_adapter.py
  ├── README.md
  ├── setup.cfg
