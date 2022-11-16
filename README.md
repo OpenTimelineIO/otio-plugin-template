@@ -51,10 +51,10 @@ following convention:
 * Python package name (using underscores): `otio_<dialect>_<plugintype>`
 
 
-| Key          | Required | Notes                                                             |
-|:-------------|:--------:|:------------------------------------------------------------------|
-| `dialect`    | True     | The filetype, language, application etc. you're adding support for|
-| `plugintype` | False    | `adapter`, `medialinker`, `hook`, `scemadef` etc.<br>If your plugin contains several of the mentioned components you may omit the<br>plugintype given that the dialect key covers the intention of the plugin.
+| Key          | Required | Notes                                                                                                                                                                                                          |
+|:-------------|:--------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `dialect`    |   True   | The filetype, language, application etc. you're adding support for                                                                                                                                             |
+| `plugintype` |  False   | `adapter`, `medialinker`, `hook`, `scemadef` etc.<br>If your plugin contains several of the mentioned components you may omit the<br>plugintype given that the dialect key covers the intention of the plugin. |
 
 Examples:
 * `otio-playlist-adapter` (read or write playlist files)
