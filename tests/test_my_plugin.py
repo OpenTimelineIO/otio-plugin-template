@@ -76,6 +76,7 @@ def test_media_linker():
 
 
 def test_schemadef():
+    my_schemadef = otio.schema.schemadef.module_from_name('my_schemadef')
     my_schema = otio.schemadef.my_schemadef.MyThing()
     assert isinstance(my_schema, otio.core.SerializableObject)
     assert my_schema.arg1 is None
