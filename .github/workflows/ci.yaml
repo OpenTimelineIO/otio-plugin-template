@@ -43,6 +43,7 @@ jobs:
             pip install git+https://github.com/AcademySoftwareFoundation/OpenTimelineIO.git
           else
             pip install -V OpenTimelineIO==${{ matrix.otio-version }}
+          fi
           pip install flake8 pytest pytest-cov
 
       - name: Install Plugin
