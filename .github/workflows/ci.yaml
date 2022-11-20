@@ -39,12 +39,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          
           if [[ "${{ matrix.otio }}" == "main" ]]; then
             pip install git+https://github.com/AcademySoftwareFoundation/OpenTimelineIO.git
           else
             pip install -V OpenTimelineIO==${{ matrix.otio-version }}
-
           pip install flake8 pytest pytest-cov
 
       - name: Install Plugin
