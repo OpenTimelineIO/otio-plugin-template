@@ -25,6 +25,8 @@ jobs:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
         os: [ubuntu-latest, macos-latest, windows-latest]
         otio-version: ["0.15.0", "main"]
+        # We exclude this combination as it's not supported on all
+        # platforms at the time of this commit
         exclude:
           - python-version: "3.11"
             otio-version: "0.15.0"
