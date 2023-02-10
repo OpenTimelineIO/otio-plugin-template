@@ -65,7 +65,7 @@ Examples:
 
 
 ## Default folder structure
-Below is the default file and folder tree that comes with the plugin template.
+Below is the included file and folder tree that comes with the plugin template.
   
 ```
 ├── LICENSE-APACHE-20
