@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "your_otio_plugin"
+name = "your-otio-plugin"
 version = "0.0.1"
 authors = [
   { name="Example Author", email="author@example.com" },
@@ -23,7 +23,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "Natural Language :: English"
 ]
-keywords = ["film", "tv", "editing", "editorial", "edit", "non-linear", "edl", "time", "otio", "otio-adapter"]
+keywords = ["film", "tv", "editing", "editorial", "edit", "non-linear", "time", "otio", "otio-adapter"]
 
 [project.urls]
 "Homepage" = "https://url/to/your/repo"

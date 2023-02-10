@@ -18,7 +18,7 @@ on:
 jobs:
   test-plugin:
     env:
-      plugin_name: "otio_template_plugin"
+      plugin_name: "your-otio-plugin"
 
     strategy:
       matrix:
