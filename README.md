@@ -156,7 +156,7 @@ This will by default produce wheel and source packages in a "dist" folder.
 
 For more info on building packages, please refer to the python's 
 [packaging](https://packaging.python.org/en/latest/overview/) guide 
-and/or the [build](https://pypa-build.readthedocs.io/en/stable/) documentation
+and/or the [build](https://pypa-build.readthedocs.io/en/stable/) documentation.
 
 
 ## Unit tests
