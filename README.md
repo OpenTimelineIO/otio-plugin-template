@@ -147,6 +147,18 @@ otioconvert -i some_timeline.otio -o some_timeline.ext
 ```
 
 
+### Build your package locally
+You might want to build your package locally to check that everything is behaving
+the way you intended.  
+To do so, simply run `python -m build` in the root of your repo.  
+This will by default produce wheel and source packages in a "dist" folder.
+>**NOTE!** You might need to add the "build" package to your virtualenv (`pip install build`).
+
+For more info on building packages, please refer to the python's 
+[packaging](https://packaging.python.org/en/latest/overview/) guide 
+and/or the [build](https://pypa-build.readthedocs.io/en/stable/) documentation
+
+
 ## Unit tests
 
 It's always a good idea to write unit tests for you code.
