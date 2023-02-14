@@ -65,35 +65,37 @@ Examples:
 
 
 ## Default folder structure
-Below is the default file and folder tree that comes with the plugin template.
+Below is the included file and folder tree that comes with the plugin template.
   
 ```
- |── LICENSE
- ├── otio_plugin_template
- │   ├── __init__.py
- │   ├── plugin_manifest.json  # Required
- │   ├── adapters
- │   │   ├── __init__.py
- │   │   ├── my_adapter.py
- │   ├── hooks
- │   │   ├── __init__.py
- │   │   ├── my_hook.py
- │   ├── operations
- │   │   ├── __init__.py
- │   │   ├── my_media_linker.py
- │   └── schemadefs
- │       ├── __init__.py
- │       ├── my_schemadef.py
- ├── README.md
- ├── setup.cfg
- ├── setup.py
- ├── tests
-     └── test_my_plugin.py
+├── LICENSE-APACHE-20
+├── LICENSE.md
+├── LICENSE-MIT
+├── pyproject.toml
+├── README.md
+├── src
+│   └── your_otio_plugin
+│       ├── adapters
+│       │   ├── __init__.py
+│       │   ├── my_adapter.py
+│       ├── hooks
+│       │   ├── __init__.py
+│       │   ├── my_hook.py
+│       ├── __init__.py
+│       ├── operations
+│       │   ├── __init__.py
+│       │   ├── my_media_linker.py
+│       ├── plugin_manifest.json
+│       └── schemadefs
+│           ├── __init__.py
+│           ├── my_schemadef.py
+├── tests
+    └── test_my_plugin.py
 ```
 
 ### Reorganizing the folder structure to suite your plugin
 You're free to rename, remove or restructure the files and folders to best suite 
-your plugin. Simple adapters may not need a deep folder structure (see example below).  
+your plugin. Simple adapters may not need a deep folder structure (see [example](#simplified-folder-structure) below).  
 Just make sure the `plugin_manifest.json` file is kept and that the contents 
 inside it reflect your choices. This makes sure OpenTimelineIO's plugin system 
 loads your plugin properly.
@@ -101,18 +103,19 @@ loads your plugin properly.
 > **TIP!** Make sure to add a descriptive docstring at the top of your plugin files, so they 
 register properly and inform users of what they do.
 
+#### Simplified folder structure
 Example of a simple adapter plugin. Notice how we removed the "adapters" folder.
 ```
- |── LICENSE
- ├── otio_my_adapter
- │   ├── __init__.py
- │   ├── plugin_manifest.json  # Required
- │   ├── my_adapter.py
- ├── README.md
- ├── setup.cfg
- ├── setup.py
- ├── tests
-     └── test_my_adapter.py
+|── LICENSE
+├── src
+│   └── your_otio_adapter
+│       ├── __init__.py
+│       ├── plugin_manifest.json  # Required
+│       ├── my_adapter.py
+├── README.md
+├── pyproject.toml
+├── tests
+    └── test_my_adapter.py
 ```
 
 And the manifest file:
@@ -142,6 +145,18 @@ otiopluginfo myadapter
 # Test an adapter for instance
 otioconvert -i some_timeline.otio -o some_timeline.ext
 ```
+
+
+### Build your package locally
+You might want to build your package locally to check that everything is behaving
+the way you intended.  
+To do so, simply run `python -m build` in the root of your repo.  
+This will by default produce wheel and source packages in a "dist" folder.
+>**NOTE!** You might need to add the "build" package to your virtualenv (`pip install build`).
+
+For more info on building packages, please refer to the python's 
+[packaging](https://packaging.python.org/en/latest/overview/) guide 
+and/or the [build](https://pypa-build.readthedocs.io/en/stable/) documentation.
 
 
 ## Unit tests

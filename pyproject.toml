@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "your-otio-plugin"
+version = "0.0.1"
+authors = [
+  { name="Example Author", email="author@example.com" },
+]
+description = "A description of your OTIO plugin"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Video :: Display",
+    "Topic :: Multimedia :: Video :: Non-Linear Editor",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Natural Language :: English"
+]
+keywords = ["film", "tv", "editing", "editorial", "edit", "non-linear", "time", "otio", "otio-adapter"]
+
+[project.urls]
+"Homepage" = "https://url/to/your/repo"
+"Bug Tracker" = "https://url/to/your/repo/issues"
+
+[project.entry-points."opentimelineio.plugins"]
+your_otio_plugin = "your_otio_plugin"
+
+[tool.hatch.build.targets.sdist]
+# Ensure the sdist includes a setup.py for older pip versions
+support-legacy = true
+exclude = [".github"]
