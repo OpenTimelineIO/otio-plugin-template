@@ -179,16 +179,17 @@ A set of simple automation scripts are available in the `.github/workflows` fold
 ## Upload to PyPi
 
 Should you want to release your package to the world and let others reap the 
-fruits of your labor, an example setup.py is provided which should guide you 
+fruits of your labor, an example "pyproject.toml" is provided which should guide you 
 on the way towards publishing your plugin on PyPi.
 There's also a sample github-action provided to help automate the process.
 
 Manual steps for creating a simple package and upload to (test)PyPi:
 ```
-python setup.py sdist bdist_wheel --universal
+# Requires "build" and "twine" package installed in your virtualenv 
+python -m build
 twine upload --repository testpypi dist/*
 ```
-Please check out pythons [docs](https://packaging.python.org/tutorials/packaging-projects/#packaging-python-projects) 
+Please check out python's [docs](https://packaging.python.org/en/latest/overview/) 
 for more detailed descriptions on packaging. 
 
 
